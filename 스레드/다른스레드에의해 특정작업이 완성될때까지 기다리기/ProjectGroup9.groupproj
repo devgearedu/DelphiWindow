@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{ED6FA525-FB16-49C5-969E-F776A46F6702}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ThreadWaitProject_XE2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Public\Documents\Embarcadero\Studio\15.0\Samples\Object Pascal\RTL\Parallel Library\VCL\ConwaysLife.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ThreadWaitProject_XE2">
+        <MSBuild Projects="ThreadWaitProject_XE2.dproj"/>
+    </Target>
+    <Target Name="ThreadWaitProject_XE2:Clean">
+        <MSBuild Projects="ThreadWaitProject_XE2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ThreadWaitProject_XE2:Make">
+        <MSBuild Projects="ThreadWaitProject_XE2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ConwaysLife">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\15.0\Samples\Object Pascal\RTL\Parallel Library\VCL\ConwaysLife.dproj"/>
+    </Target>
+    <Target Name="ConwaysLife:Clean">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\15.0\Samples\Object Pascal\RTL\Parallel Library\VCL\ConwaysLife.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ConwaysLife:Make">
+        <MSBuild Projects="C:\Users\Public\Documents\Embarcadero\Studio\15.0\Samples\Object Pascal\RTL\Parallel Library\VCL\ConwaysLife.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ThreadWaitProject_XE2;ConwaysLife"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ThreadWaitProject_XE2:Clean;ConwaysLife:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ThreadWaitProject_XE2:Make;ConwaysLife:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

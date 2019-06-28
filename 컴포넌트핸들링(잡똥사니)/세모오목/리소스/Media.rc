@@ -1,0 +1,5 @@
+NEWGAME                 WAVE    newgame.wav
+GAMEOVER                WAVE    gameover.wav
+STONE                   WAVE    stone.wav
+WHITECURSOR		CURSOR	white.cur
+BLACKCURSOR		CURSOR	black.cur

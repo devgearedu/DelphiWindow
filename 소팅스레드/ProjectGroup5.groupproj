@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3F7B70B5-963D-4758-9A57-AFBBBAA2DA8E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Project_SortThread.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\RadStudio_XE6_Demo\radstudiodemos-code-1932-branches-RadStudio_XE6\Object Pascal\RTL\Threads\thrddemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Project_SortThread">
+        <MSBuild Projects="Project_SortThread.dproj"/>
+    </Target>
+    <Target Name="Project_SortThread:Clean">
+        <MSBuild Projects="Project_SortThread.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_SortThread:Make">
+        <MSBuild Projects="Project_SortThread.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="thrddemo">
+        <MSBuild Projects="D:\RadStudio_XE6_Demo\radstudiodemos-code-1932-branches-RadStudio_XE6\Object Pascal\RTL\Threads\thrddemo.dproj"/>
+    </Target>
+    <Target Name="thrddemo:Clean">
+        <MSBuild Projects="D:\RadStudio_XE6_Demo\radstudiodemos-code-1932-branches-RadStudio_XE6\Object Pascal\RTL\Threads\thrddemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="thrddemo:Make">
+        <MSBuild Projects="D:\RadStudio_XE6_Demo\radstudiodemos-code-1932-branches-RadStudio_XE6\Object Pascal\RTL\Threads\thrddemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Project_SortThread;thrddemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Project_SortThread:Clean;thrddemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Project_SortThread:Make;thrddemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

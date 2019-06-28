@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1FD4EF5A-7200-4212-9375-79839AA4B50B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MyPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\User5217\Documents\Embarcadero\Studio\Projects\Project192.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MyPackage">
+        <MSBuild Projects="MyPackage.dproj"/>
+    </Target>
+    <Target Name="MyPackage:Clean">
+        <MSBuild Projects="MyPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MyPackage:Make">
+        <MSBuild Projects="MyPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project192">
+        <MSBuild Projects="C:\Users\User5217\Documents\Embarcadero\Studio\Projects\Project192.dproj"/>
+    </Target>
+    <Target Name="Project192:Clean">
+        <MSBuild Projects="C:\Users\User5217\Documents\Embarcadero\Studio\Projects\Project192.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project192:Make">
+        <MSBuild Projects="C:\Users\User5217\Documents\Embarcadero\Studio\Projects\Project192.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MyPackage;Project192"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MyPackage:Clean;Project192:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MyPackage:Make;Project192:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

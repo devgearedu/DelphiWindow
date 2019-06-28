@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AAC5C693-D73B-49FB-8CF6-FA76C26F8219}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Ptcp_Server_XE3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Ptcp_client_XE3.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Ptcp_Server_XE3">
+        <MSBuild Projects="Ptcp_Server_XE3.dproj"/>
+    </Target>
+    <Target Name="Ptcp_Server_XE3:Clean">
+        <MSBuild Projects="Ptcp_Server_XE3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Ptcp_Server_XE3:Make">
+        <MSBuild Projects="Ptcp_Server_XE3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Ptcp_client_XE3">
+        <MSBuild Projects="Ptcp_client_XE3.dproj"/>
+    </Target>
+    <Target Name="Ptcp_client_XE3:Clean">
+        <MSBuild Projects="Ptcp_client_XE3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Ptcp_client_XE3:Make">
+        <MSBuild Projects="Ptcp_client_XE3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Ptcp_Server_XE3;Ptcp_client_XE3"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Ptcp_Server_XE3:Clean;Ptcp_client_XE3:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Ptcp_Server_XE3:Make;Ptcp_client_XE3:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

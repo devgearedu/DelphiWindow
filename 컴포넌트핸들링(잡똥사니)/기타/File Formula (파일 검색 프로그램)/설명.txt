@@ -1,0 +1,86 @@
+<검색식을 이용한 파일찾기 예제 프로그램>
+
+까만창에 검색식을 넣고 Ctrl+Enter하면 바로 위 창에 있는 경로들에서 파일을 찾는다.
+
+까만창에서 오른쪽을 클릭하면 사용할 수 있는 파일 속성 목록을 볼 수 있다.
+
+사용할 수 있는 파일 속성들은 다음과 같다.
+
+FullName      : "C:\My Images\Bitmap\test 1.bmp"
+Path          : "C:\My Images\Bitmap\"
+DirName       : "Bitmap"
+Folder        : DirName과 같다.
+FileName      : "test 1.bmp"
+Name          : "test 1"
+Ext           : "bmp"
+Drive         : "C:"
+Size          : 1000
+DateTime      : ModifyDateTime과 같다.
+Date          : ModifyDate와 같다.
+Time          : ModifyTime과 같다.
+CreateDateTime: "2008-10-11 12:34:56"
+CreateDate    : "2008-10-11"
+CreateTime    : "12:34:56"
+ModifyDateTime: "2008-10-12 01:23:56"
+ModifyDate    : "2008-10-12"
+ModifyTime    : "01:23:45"
+AccessDateTime: "2008-10-13 02:34:56"
+AccessDate    : "2008-10-13"
+AccessTime    : "02:34:56"
+Type          : "비트맵 이미지"
+Readonly      : true/false
+Hidden        : true/false
+System        : true/false
+Directory     : true/false
+Archive       : true/false
+Temporary     : true/false
+Compressed    : true/false
+Offline       : true/false
+stream        : 파일의 내용을 String으로...
+
+검색식에서 값을 써 넣을 때는 숫자와 true, false를 제외한 나머지는 모두 "나 '로 묶어 줘야한다. 
+
+예를들면 파일 날짜로 검색 할 때 2008년에 수정된 파일을 찾으려면
+
+(Data >= "2008-01-01") and (Date <= "2008-12-31")
+
+이와 같이 날짜를 "로 묶어야 한다.
+
+숫자와 true, false는 다음과 같이 그냥 사용한다.
+
+(size >= 10000) and (directory = false)
+//파일 크기가 10000Byte보다 크거나 같고 디렉토리가 아닌 것.
+
+
+
+예1)
+
+(FileName = "readme.txt") or (FileName = "readme.doc")
+//파일 명이 "readme.txt"이거나 "readme.doc"인것.
+
+
+예2)
+
+(Name = "readme") and ((Ext = "txt") or (Ext = "doc"))
+//확장자를 제외한 파일 명이 "readme"이고 확장자가 "txt"이거나 "doc"인것.
+
+
+예3)
+
+Name = "readme" and (Ext = "txt" or Ext = "doc")
+//확장자를 제외한 파일 명이 "readme"이고 확장자가 "txt"이거나 "doc"인것...
+//위와 같은 예제인데 괄호를 생략한 경우(결과는 동일하다)
+
+
+예4)
+
+(FileName like "%delphi%") and (size >= 100000) and (Date >= "2008-01-01")
+//FileName에 "delphi"가 포함되었고 size가 100000보다 크거나 같고 날짜가 2008-01-01 이후인것.
+
+
+
+이 프로그램은 강좌 예제용으로써 완전 프리웨어다.
+
+
+양병규
+delmadang@hanmail.net

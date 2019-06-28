@@ -1,0 +1,13 @@
+program ThreadWaitProject_XE2;
+
+uses
+  Forms,
+  UnitFormWait in 'UnitFormWait.pas' {Form1};
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

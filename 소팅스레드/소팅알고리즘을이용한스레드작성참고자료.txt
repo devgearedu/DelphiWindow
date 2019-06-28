@@ -1,0 +1,9 @@
+이 예제는 소팅 알고리즘을 사용한 스레드 델파이 데모입니다.(thrdemo.dpr)
+
+과제와 동일하게 BubbleSort, SelectionSort, QuickSort를 작성하지만 그 결과를 각 스레드의 TPaintBox에
+소팅된 결과를 표시하는 예제입니다.
+
+SortThds.pas에  각 소팅 스레드들이 정의 되어있고
+ThSort.pas에 화면이 TPaintBox를 사용하는 화면이 정의 되어 있습니다.
+
+과제 보다 좀 더 여려운 예제이지만 참조하시면서 공부하시면 많은 도움이 되실 것입니다. 
