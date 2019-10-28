@@ -3,7 +3,7 @@ unit UABOUT;
 interface
 
 uses WinApi.Windows, System.SysUtils, System.Classes, Vcl.Graphics,
-  Vcl.Forms, Vcl.Controls, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+  Vcl.Forms, Vcl.Controls, VCl.themes,vcl.styles, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TAboutBox = class(TForm)
@@ -14,6 +14,7 @@ type
     Copyright: TLabel;
     Comments: TLabel;
     OKButton: TButton;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +54,11 @@ begin
   result := x / y;
 end;
 {$R *.dfm}
+
+procedure TAboutBox.FormCreate(Sender: TObject);
+begin
+  TStyleManager.SetStyle('windows10 purple');
+end;
 
 end.
 

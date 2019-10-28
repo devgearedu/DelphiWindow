@@ -10,12 +10,18 @@ library PAboutBox;
   with your DLL. To avoid using BORLNDMM.DLL, pass string information
   using PChar or ShortString parameters. }
 
+
+
+{$R *.dres}
+
 uses
   System.SysUtils,
   System.Classes,
   uAbout in 'uAbout.pas' {AboutBox};
 
 {$R *.res}
+
+{$R <PropertyGroup Condition="'$(Base)'!=''"> <VCL_Custom_Styles>&quot;Windows10 purple|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\20.0\Styles\Windows10purple.vsf&quot;</VCL_Custom_Styles>}
 exports
    Display_About,
    Add,

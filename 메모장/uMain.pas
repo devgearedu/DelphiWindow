@@ -89,6 +89,8 @@ type
     Action2: TAction;
     Action3: TAction;
     ImageList2: TImageList;
+    RibbonGroup12: TRibbonGroup;
+    ComboBox1: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure RibbonSpinEdit1Change(Sender: TObject);
@@ -113,6 +115,7 @@ type
     procedure Action1Execute(Sender: TObject);
     procedure Action2Execute(Sender: TObject);
     procedure Action3Execute(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
   private
     function GetCurrPos(RichEdit:TRichEdit):integer;
     function GetCurrLine(RichEdit:TRichEdit):integer;
@@ -215,6 +218,11 @@ begin
   TStyleManager.TrySetStyle('Auric');
 end;
 
+procedure TMainForm.ComboBox1Change(Sender: TObject);
+begin
+  TStyleManager.SetStyle(Combobox1.Text);
+end;
+
 procedure TMainForm.ExceptionHandler(sender: TObject; e: exception);
 begin
   if e is EFopenError then
@@ -310,7 +318,12 @@ type
 var
   ItemClass: PListColumnClass;
   ListColumn: TListColumn;
+  StyleName: string;
 begin
+ for StyleName in TStyleManager.StyleNames do
+    Combobox1.Items.Add(StyleName);
+
+  Combobox1.ItemIndex := Combobox1.Items.IndexOf(TStyleManager.ActiveStyle.Name);
   ItemClass := @ListView1.Columns.ItemClass;
   ItemClass^ := TMyListItem;
 

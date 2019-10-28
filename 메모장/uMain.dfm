@@ -97,9 +97,9 @@ object MainForm: TMainForm
         Caption = #54256#53944
         GroupIndex = 3
         object RibbonSpinEdit1: TRibbonSpinEdit
-          Left = 176
+          Left = 172
           Top = 2
-          Width = 73
+          Width = 77
           Height = 22
           MaxValue = 0
           MinValue = 0
@@ -137,11 +137,29 @@ object MainForm: TMainForm
       object RibbonGroup7: TRibbonGroup
         Left = 207
         Top = 3
-        Width = 286
+        Width = 275
         Height = 86
         ActionManager = ActionManager1
         Caption = #54868#47732#52968#53944#47204
         GroupIndex = 2
+      end
+      object RibbonGroup12: TRibbonGroup
+        Left = 484
+        Top = 3
+        Width = 158
+        Height = 86
+        ActionManager = ActionManager1
+        Caption = #49828#53440#51068
+        GroupIndex = 3
+        object ComboBox1: TComboBox
+          Left = 4
+          Top = 2
+          Width = 150
+          Height = 21
+          TabOrder = 0
+          Text = 'ComboBox1'
+          OnChange = ComboBox1Change
+        end
       end
     end
   end
@@ -217,7 +235,6 @@ object MainForm: TMainForm
         Top = 600
         Caption = #47532#49828#53944#48624
         TabOrder = 0
-        ExplicitWidth = 180
         object ListView1: TListView
           Left = 0
           Top = 0
@@ -248,7 +265,6 @@ object MainForm: TMainForm
         Top = 400
         Caption = #51312#51649#46020'(treeview'#52980#54252#45324#53944')'
         TabOrder = 1
-        ExplicitWidth = 180
         object TreeView1: TTreeView
           Left = 0
           Top = 0
@@ -272,7 +288,6 @@ object MainForm: TMainForm
         Top = 200
         Caption = #44368#50977#47785#47197'(ButtonGrroup'#52980#54252#45324#53944#49324#50836
         TabOrder = 2
-        ExplicitWidth = 180
         object ButtonGroup1: TButtonGroup
           Left = 0
           Top = 0
@@ -306,7 +321,6 @@ object MainForm: TMainForm
         Top = 0
         Caption = #49660#54609#47785#47197'(categorybutton zj'#52980#54252#45324#53944' '#49324#50857')'
         TabOrder = 3
-        ExplicitWidth = 180
         object CategoryButtons1: TCategoryButtons
           Left = 0
           Top = 0
