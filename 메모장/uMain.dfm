@@ -137,7 +137,7 @@ object MainForm: TMainForm
       object RibbonGroup7: TRibbonGroup
         Left = 207
         Top = 3
-        Width = 275
+        Width = 281
         Height = 86
         ActionManager = ActionManager1
         Caption = #54868#47732#52968#53944#47204
@@ -188,13 +188,13 @@ object MainForm: TMainForm
     Caption = 'GridPanel1'
     ColumnCollection = <
       item
-        Value = 24.650047992715690000
+        Value = 24.256245128601500000
       end
       item
-        Value = 72.310856853283160000
+        Value = 71.155637092908310000
       end
       item
-        Value = 3.039095154001155000
+        Value = 4.729729729729730000
       end>
     ControlCollection = <
       item
@@ -209,20 +209,20 @@ object MainForm: TMainForm
       end>
     RowCollection = <
       item
-        Value = 3.160967069807541000
+        Value = 3.006643518180030000
       end
       item
-        Value = 93.808376952977840000
+        Value = 89.228499471154690000
       end
       item
-        Value = 3.030655977214621000
+        Value = 8.116883116883116000
       end>
     TabOrder = 2
     object CategoryPanelGroup1: TCategoryPanelGroup
       Left = 1
       Top = 10
-      Width = 182
-      Height = 288
+      Width = 179
+      Height = 274
       VertScrollBar.Tracking = True
       Align = alClient
       HeaderFont.Charset = DEFAULT_CHARSET
@@ -238,7 +238,7 @@ object MainForm: TMainForm
         object ListView1: TListView
           Left = 0
           Top = 0
-          Width = 161
+          Width = 156
           Height = 174
           Align = alClient
           Columns = <
@@ -268,7 +268,7 @@ object MainForm: TMainForm
         object TreeView1: TTreeView
           Left = 0
           Top = 0
-          Width = 161
+          Width = 156
           Height = 174
           Align = alClient
           Images = ImageList2
@@ -291,7 +291,7 @@ object MainForm: TMainForm
         object ButtonGroup1: TButtonGroup
           Left = 0
           Top = 0
-          Width = 161
+          Width = 156
           Height = 174
           Align = alClient
           ButtonOptions = [gboFullSize, gboShowCaptions]
@@ -324,7 +324,7 @@ object MainForm: TMainForm
         object CategoryButtons1: TCategoryButtons
           Left = 0
           Top = 0
-          Width = 161
+          Width = 156
           Height = 174
           Align = alClient
           ButtonFlow = cbfVertical
@@ -420,10 +420,10 @@ object MainForm: TMainForm
       end
     end
     object RichEdit1: TRichEdit
-      Left = 183
+      Left = 180
       Top = 10
-      Width = 535
-      Height = 288
+      Width = 526
+      Height = 274
       Align = alClient
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
@@ -1410,6 +1410,11 @@ object MainForm: TMainForm
             ImageIndex = 18
           end
           item
+            Action = AboutForm_Action
+            Caption = 'About('#51068#48152#54868#47732')(&U)'
+            ImageIndex = 18
+          end
+          item
             Action = Action3
             Caption = 'DLL '#47196#46300#47785#47197'(&D)'
           end
@@ -1695,6 +1700,13 @@ object MainForm: TMainForm
       Category = #44592#53440
       Caption = 'DLL '#47196#46300#47785#47197
       OnExecute = Action3Execute
+    end
+    object AboutForm_Action: TAction
+      Category = #44592#53440
+      Caption = 'About('#51068#48152#54868#47732')'
+      Hint = #45824#54868#49345#51088#54364#49884
+      ImageIndex = 18
+      OnExecute = AboutForm_ActionExecute
     end
   end
   object PopupMenu1: TPopupMenu
@@ -2006,7 +2018,7 @@ object MainForm: TMainForm
   end
   object ImageList2: TImageList
     Left = 196
-    Top = 268
+    Top = 324
     Bitmap = {
       494C010101000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010

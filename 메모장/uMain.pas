@@ -91,6 +91,7 @@ type
     ImageList2: TImageList;
     RibbonGroup12: TRibbonGroup;
     ComboBox1: TComboBox;
+    AboutForm_Action: TAction;
     procedure FormCreate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure RibbonSpinEdit1Change(Sender: TObject);
@@ -116,6 +117,7 @@ type
     procedure Action2Execute(Sender: TObject);
     procedure Action3Execute(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure AboutForm_ActionExecute(Sender: TObject);
   private
     function GetCurrPos(RichEdit:TRichEdit):integer;
     function GetCurrLine(RichEdit:TRichEdit):integer;
@@ -129,7 +131,7 @@ var
 
 implementation
 
-uses uListUp_DLL;
+uses uListUp_DLL, uAbout;
 type
   Delphi_Curri = record
     Instructor:string;
@@ -152,6 +154,7 @@ var
   AboutProc:TAboutProc;
   AddFunc:TcalcFunc<integer>;
   DivFunc:TcalcFunc<real>;
+  FilePath:string;
 
 procedure Display_About; stdcall;
 external 'PAboutBox.dll' delayed;
@@ -160,6 +163,16 @@ function Add(x,y:integer):integer; stdcall;
 external 'PAboutBox.dll' delayed;
 
 {$R *.dfm}
+
+procedure TMainForm.AboutForm_ActionExecute(Sender: TObject);
+begin
+  AboutBox := TAboutBox.create(Application);
+  try
+    AboutBox.ShowModal;
+  finally
+    AboutBox.Free;
+  end;
+end;
 
 procedure TMainForm.About_ActionExecute(Sender: TObject);
 begin
@@ -273,7 +286,7 @@ end;
 
 procedure TMainForm.FileOpen1BeforeExecute(Sender: TObject);
 begin
-   FileOpen1.Dialog.InitialDir := 'd:\';
+   FileOpen1.Dialog.InitialDir := FilePath;
    FileOpen1.Dialog.Filter :=
    '프로젝트파일|*.dpr|유니트파일|*.pas|텍스트파일|*.txt';
 end;
@@ -290,7 +303,7 @@ end;
 
 procedure TMainForm.FileSaveAs1BeforeExecute(Sender: TObject);
 begin
-  FileSaveAs1.Dialog.InitialDir := 'd:\';
+  FileSaveAs1.Dialog.InitialDir := FilePath;
 end;
 
 procedure TMainForm.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -319,7 +332,23 @@ var
   ItemClass: PListColumnClass;
   ListColumn: TListColumn;
   StyleName: string;
+  Filename: string;
+  jumpItem: TJumpListItem;
+  CategoryIndex:integer;
 begin
+  FilePath := ExtractFilePath(Application.ExeName);
+  FileName :=
+  'D:\델파이교육소스\윈도우프로그래밍\리본컨트롤자동생성(액션포함)\Win32\Debug\test.exe';
+//Jump list 동적생성 경로는 수정해서 사용하십시오 !!!!
+  CategoryIndex := JumpList1.AddCategory('MyCategory');
+  JumpList1.AddItemToCategory(CategoryIndex,
+  'MyItem',FileName, '','');
+
+  jumpItem := JumpList1.TaskList.add as TJumpListItem;
+  jumpItem.FriendlyName := '테스트프로그램2';
+  jumpItem.path := Filename;
+  JumpList1.UpdateList;
+
  for StyleName in TStyleManager.StyleNames do
     Combobox1.Items.Add(StyleName);
 

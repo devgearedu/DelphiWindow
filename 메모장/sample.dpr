@@ -5,9 +5,9 @@ uses
   USplash in 'USplash.pas' {SplashForm},
   uMain in 'uMain.pas' {MainForm},
   uListUp_DLL in 'uListUp_DLL.pas' {DllLoadForm},
-  Uchart_Frame in 'Uchart_Frame.pas' {chartFrame: TFrame},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  uAbout in 'uAbout.pas' {AboutBox};
 
 {$R *.res}
 
