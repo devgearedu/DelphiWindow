@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 330
-  ClientWidth = 388
+  ClientHeight = 361
+  ClientWidth = 571
   Color = clBtnFace
   DragKind = dkDock
   Font.Charset = DEFAULT_CHARSET
@@ -19,22 +19,19 @@
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 388
-    Height = 330
+    Width = 571
+    Height = 361
     ActivePage = TabSheet1
     Align = alClient
+    MultiLine = True
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #51312#54924
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TabControl1: TTabControl
         Left = 0
         Top = 0
-        Width = 380
-        Height = 302
+        Width = 563
+        Height = 333
         Align = alClient
         TabOrder = 0
         Tabs.Strings = (
@@ -69,12 +66,14 @@
           Tag = 5
           Left = 4
           Top = 24
-          Width = 372
-          Height = 274
+          Width = 555
+          Height = 305
           Align = alClient
+          DrawingStyle = gdsClassic
           FixedCols = 0
           RowCount = 8
           TabOrder = 0
+          OnDrawCell = StringGrid1DrawCell
           ColWidths = (
             64
             64
@@ -90,7 +89,7 @@
         end
       end
     end
-    object 편집: TTabSheet
+    object TabSheet2: TTabSheet
       Caption = #54200#51665
       ImageIndex = 1
       ExplicitLeft = 0
@@ -98,10 +97,10 @@
       ExplicitWidth = 0
       ExplicitHeight = 0
       object Image1: TImage
-        Left = 240
-        Top = 24
-        Width = 129
-        Height = 161
+        Left = 32
+        Top = 16
+        Width = 177
+        Height = 217
         Picture.Data = {
           07544269746D6170F63E0000424DF63E0000000000007600000028000000C800
           0000A00000000100040000000000803E00000000000000000000100000000000
@@ -610,9 +609,9 @@
           EEFE}
       end
       object Edit1: TEdit
-        Left = 32
-        Top = 32
-        Width = 121
+        Left = 240
+        Top = 16
+        Width = 217
         Height = 21
         TabOrder = 0
         Text = 'Angel Fish'
@@ -621,10 +620,55 @@
     object 차트: TTabSheet
       Caption = #52264#53944
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      ExplicitWidth = 294
+      ExplicitHeight = 171
+      inline TFrame11: TFrame1
+        Left = 0
+        Top = -44
+        Width = 504
+        Height = 363
+        TabOrder = 0
+        ExplicitTop = -44
+        inherited DBChart1: TDBChart
+          Top = 59
+          Height = 233
+          Title.Margins.Left = 12
+          Title.Text.Strings = (
+            #46041#47932' '#49324#51060#51592' '#52264#53944)
+          ExplicitTop = 59
+          ExplicitHeight = 233
+          PrintMargins = (
+            15
+            22
+            15
+            22)
+          inherited Series1: TBarSeries
+            DataSource = ClientDataSet1
+            XLabelsSource = 'NAME'
+            YValues.ValueSource = 'SIZE'
+          end
+        end
+        inherited Button1: TButton
+          Top = 304
+          ExplicitTop = 304
+        end
+        inherited Button2: TButton
+          Top = 304
+          ExplicitTop = 304
+        end
+        inherited Button3: TButton
+          Top = 335
+          ExplicitTop = 335
+        end
+        inherited Button4: TButton
+          Top = 335
+          ExplicitTop = 335
+        end
+        inherited ColorGrid1: TColorGrid
+          Left = 202
+          ExplicitLeft = 202
+        end
+      end
     end
   end
   object ClientDataSet1: TClientDataSet
@@ -4173,39 +4217,25 @@
     Active = True
     Aggregates = <>
     Params = <>
-    Left = 28
-    Top = 32
+    Left = 500
+    Top = 184
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = ClientDataSet1
     ScopeMappings = <>
-    Left = 176
-    Top = 24
+    Left = 496
+    Top = 120
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 124
-    Top = 21
+    Left = 500
+    Top = 61
     object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       GridControl = StringGrid1
       Columns = <>
-    end
-    object LinkControlToField1: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'NAME'
-      Control = Edit1
-      Track = True
-    end
-    object LinkControlToField2: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'BMP'
-      Control = Image1
-      Track = False
     end
   end
 end

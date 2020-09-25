@@ -144,7 +144,7 @@ object MainForm: TMainForm
         GroupIndex = 2
       end
       object RibbonGroup12: TRibbonGroup
-        Left = 484
+        Left = 490
         Top = 3
         Width = 158
         Height = 86
@@ -153,7 +153,7 @@ object MainForm: TMainForm
         GroupIndex = 3
         object ComboBox1: TComboBox
           Left = 4
-          Top = 2
+          Top = 3
           Width = 150
           Height = 21
           TabOrder = 0
@@ -188,13 +188,13 @@ object MainForm: TMainForm
     Caption = 'GridPanel1'
     ColumnCollection = <
       item
-        Value = 24.256245128601500000
+        Value = 24.899254699616840000
       end
       item
-        Value = 71.155637092908310000
+        Value = 73.041904132174200000
       end
       item
-        Value = 4.729729729729730000
+        Value = 2.058841168208976000
       end>
     ControlCollection = <
       item
@@ -209,20 +209,20 @@ object MainForm: TMainForm
       end>
     RowCollection = <
       item
-        Value = 3.006643518180030000
+        Value = 3.156371176308280000
       end
       item
-        Value = 89.228499471154690000
+        Value = 93.671984102216210000
       end
       item
-        Value = 8.116883116883116000
+        Value = 3.171644721475495000
       end>
     TabOrder = 2
     object CategoryPanelGroup1: TCategoryPanelGroup
       Left = 1
-      Top = 10
-      Width = 179
-      Height = 274
+      Top = 11
+      Width = 184
+      Height = 288
       VertScrollBar.Tracking = True
       Align = alClient
       HeaderFont.Charset = DEFAULT_CHARSET
@@ -238,27 +238,27 @@ object MainForm: TMainForm
         object ListView1: TListView
           Left = 0
           Top = 0
-          Width = 156
+          Width = 160
           Height = 174
           Align = alClient
           Columns = <
             item
-              Caption = #51060#47492
+              Caption = #44053#49324#51060#47492
             end
             item
               Caption = #48260#51204
             end
             item
-              Caption = #44079#49688
+              Caption = #51064#50896#49688
             end>
           Items.ItemData = {
-            05360000000100000000000000FFFFFFFFFFFFFFFF02000000FFFFFFFF000000
-            00034DD638AED9B3037800650032003086B21E0131004856B21EFFFFFFFF}
+            05720000000200000000000000FFFFFFFFFFFFFFFF02000000FFFFFFFF000000
+            00034DD638AED9B304310030002E003200E09CED1E02310030003895ED1E0000
+            0000FFFFFFFFFFFFFFFF02000000FFFFFFFF000000000374C71CC2E0C2043100
+            30002E00320058F6ED1E01320090F6ED1EFFFFFFFFFFFFFFFF}
           TabOrder = 0
           ViewStyle = vsReport
-          ExplicitLeft = -2
-          ExplicitTop = 6
-          ExplicitWidth = 165
+          ExplicitLeft = -1
         end
       end
       object CategoryPanel3: TCategoryPanel
@@ -268,7 +268,7 @@ object MainForm: TMainForm
         object TreeView1: TTreeView
           Left = 0
           Top = 0
-          Width = 156
+          Width = 160
           Height = 174
           Align = alClient
           Images = ImageList2
@@ -291,7 +291,7 @@ object MainForm: TMainForm
         object ButtonGroup1: TButtonGroup
           Left = 0
           Top = 0
-          Width = 156
+          Width = 160
           Height = 174
           Align = alClient
           ButtonOptions = [gboFullSize, gboShowCaptions]
@@ -324,7 +324,7 @@ object MainForm: TMainForm
         object CategoryButtons1: TCategoryButtons
           Left = 0
           Top = 0
-          Width = 156
+          Width = 160
           Height = 174
           Align = alClient
           ButtonFlow = cbfVertical
@@ -420,10 +420,10 @@ object MainForm: TMainForm
       end
     end
     object RichEdit1: TRichEdit
-      Left = 180
-      Top = 10
-      Width = 526
-      Height = 274
+      Left = 185
+      Top = 11
+      Width = 541
+      Height = 288
       Align = alClient
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
@@ -1505,7 +1505,7 @@ object MainForm: TMainForm
         AutoSize = False
       end>
     Images = ImageList1
-    Left = 192
+    Left = 200
     Top = 376
     StyleName = 'Ribbon - Silver'
     object FileOpen1: TFileOpen
@@ -1757,7 +1757,7 @@ object MainForm: TMainForm
         Icon = 
           'C:\Program Files (x86)\Embarcadero\Studio\20.0\Images\Icons\FACT' +
           'ORY.ICO'
-        Path = 'D:\2019_03'#50900#44592#48376#44284#51221'\Win32\Debug\test.exe'
+        Path = 'E:\'#50728#46972#51064#44368#50977'\'#44592#52488#45796#51648#44592'\Win32\Debug\Test.exe'
         FriendlyName = #53580#49828#53944#54532#47196#44536#47016
       end>
     Left = 304

@@ -1,28 +1,29 @@
-﻿[StringGrid1]
+﻿[TabSheet1]
+Coordinates=192,188,77,36
+Visible=False
+
+[StringGrid1]
 Coordinates=121,10,80,58
 Visible=True
 
+[TabSheet2]
+Coordinates=105,188,77,36
+
 [TabControl1]
-Coordinates=113,188,85,36
-
-[PageControl1]
-Coordinates=10,188,93,36
-
-[TabSheet1]
-Coordinates=315,10,77,36
-
-[차트]
-Coordinates=263,10,42,36
+Coordinates=10,188,85,36
 
 [ClientDataSet1]
 Coordinates=10,10,101,36
 Visible=False
 
-[편집]
-Coordinates=211,10,42,36
+[차트]
+Coordinates=314,10,42,36
+
+[PageControl1]
+Coordinates=211,10,93,36
 
 []
-Coordinates=238,166,91,36
+Coordinates=239,65,44,58
 
 [BindSourceDB1]
 Coordinates=10,10,106,190

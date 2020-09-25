@@ -84,7 +84,6 @@ type
     CategoryButtons1: TCategoryButtons;
     ButtonGroup1: TButtonGroup;
     TreeView1: TTreeView;
-    ListView1: TListView;
     Action1: TAction;
     Action2: TAction;
     Action3: TAction;
@@ -92,6 +91,7 @@ type
     RibbonGroup12: TRibbonGroup;
     ComboBox1: TComboBox;
     AboutForm_Action: TAction;
+    ListView1: TListView;
     procedure FormCreate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure RibbonSpinEdit1Change(Sender: TObject);
@@ -336,6 +336,17 @@ var
   jumpItem: TJumpListItem;
   CategoryIndex:integer;
 begin
+  t := ttreeNode.Create(TreeView1.Items);
+  TreeView1.Selected := TreeView1.Items.Add(t,'교육부');
+  TreeView1.Items.AddChild(treeview1.Selected, '자바');
+  new(p);
+  p^.Instructor := '김원경';
+  p^.Version := '리우 10.4.1';
+  p^.Cnt := 6;
+
+  TreeView1.Items.AddChildObject(TreeView1.Selected,'델파이', p);
+  TreeView1.FullExpand;
+
   FilePath := ExtractFilePath(Application.ExeName);
   FileName :=
   'D:\델파이교육소스\윈도우프로그래밍\리본컨트롤자동생성(액션포함)\Win32\Debug\test.exe';
