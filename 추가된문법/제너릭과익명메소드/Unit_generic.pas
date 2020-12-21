@@ -85,6 +85,7 @@ Var
   X :TMyProc<Integer>;
   Y :TMyProc2<Integer>;
 begin
+
   X := Sample;
   X(10);
   Y := MyProc;

@@ -16,6 +16,7 @@ type
      Name:string;
      Age:byte;
      Address:string;
+     class var etc:string;        //+2007 추가된 문법
      function GetName:string;
      constructor create; virtual;
    end;

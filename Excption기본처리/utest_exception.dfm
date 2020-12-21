@@ -46,7 +46,7 @@ object Form188: TForm188
   end
   object Button2: TButton
     Left = 200
-    Top = 200
+    Top = 184
     Width = 137
     Height = 41
     Caption = 'Button2'

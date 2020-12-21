@@ -106,6 +106,7 @@ procedure TForm1.Button7Click(Sender: TObject);
 begin
   var MyDictionary := TDictionary<string, Integer>.Create;
   MyDictionary.Add ('one', 1);
+  MyDictionary.Add ('two', 2);
   var APair := MyDictionary.ExtractPair('one');
   Button7.Caption := APair.Value.ToString;
 end;

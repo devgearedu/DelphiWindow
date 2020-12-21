@@ -3,7 +3,7 @@ unit uMain;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Ribbon, Vcl.ActnMenus,
   Vcl.RibbonActnMenus, Vcl.StdCtrls, Vcl.RibbonActnCtrls, Vcl.ToolWin,
   Vcl.ActnMan, Vcl.ActnCtrls, Vcl.StdActns, Vcl.ExtActns, Vcl.ActnList,
@@ -437,7 +437,7 @@ end;
 
 procedure TMainForm.Silver_ActionExecute(Sender: TObject);
 begin
-  TStyleManager.TrySetStyle('silver');
+  TStyleManager.TrySetStyle('auric');
 end;
 
 procedure TMainForm.Timer1Timer(Sender: TObject);

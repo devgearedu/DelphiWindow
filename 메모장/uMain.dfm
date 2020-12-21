@@ -1362,7 +1362,6 @@ object MainForm: TMainForm
           end
           item
             Action = Silver_Action
-            Caption = '&Silver'
           end
           item
             Action = Window_Action
@@ -1672,7 +1671,7 @@ object MainForm: TMainForm
     end
     object Silver_Action: TAction
       Category = #49828#53440#51068
-      Caption = 'Silver'
+      Caption = 'auric'
       Hint = #49892#48260#49828#53440#51068
       OnExecute = Silver_ActionExecute
     end

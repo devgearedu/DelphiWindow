@@ -12,9 +12,6 @@
         <Projects Include="sample.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\SpltViewTest\Project_splitview.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -50,23 +47,14 @@
     <Target Name="sample:Make">
         <MSBuild Projects="sample.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Project_splitview">
-        <MSBuild Projects="..\SpltViewTest\Project_splitview.dproj"/>
-    </Target>
-    <Target Name="Project_splitview:Clean">
-        <MSBuild Projects="..\SpltViewTest\Project_splitview.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Project_splitview:Make">
-        <MSBuild Projects="..\SpltViewTest\Project_splitview.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="PAboutBox;FormLoad;sample;Project_splitview"/>
+        <CallTarget Targets="PAboutBox;FormLoad;sample"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="PAboutBox:Clean;FormLoad:Clean;sample:Clean;Project_splitview:Clean"/>
+        <CallTarget Targets="PAboutBox:Clean;FormLoad:Clean;sample:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="PAboutBox:Make;FormLoad:Make;sample:Make;Project_splitview:Make"/>
+        <CallTarget Targets="PAboutBox:Make;FormLoad:Make;sample:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

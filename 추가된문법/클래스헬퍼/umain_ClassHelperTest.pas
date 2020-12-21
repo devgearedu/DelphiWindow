@@ -60,7 +60,7 @@ begin
   Listbox1.Items.Add(now);
   Listbox1.Items.Add(1000);
   Listbox1.Items.Add(true);
-  Listbox1.Items.Add(['a',1000]);
+  Listbox1.Items.Add(['a',1000, date]);
 end;
 
 { TStringsHelper }

@@ -241,7 +241,7 @@ object Form1: TForm1
   end
   object Button15: TButton
     Left = 32
-    Top = 456
+    Top = 454
     Width = 97
     Height = 25
     Caption = 'FLOAT'

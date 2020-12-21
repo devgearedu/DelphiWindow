@@ -61,9 +61,9 @@ procedure TForm1.Button2Click(Sender: TObject);
 var
   IA: TArray<Integer>;
   SA: TArray<string>;
-  FA:TArray<real>;
+  FA: TArray<real>;
 begin
-  IA := TArrayEx.CloneArray<Integer>([0,1,2,3,5,7,11,13,100,101,200,300]);
+  IA := TArrayEx.CloneArray<Integer>([0,1,2,3,5,7,11,13,100,101,200,300,400]);
   SA := TArrayEx.CloneArray<string>(['bonnie', 'clyde','kwk', 'lee','jim']);
   FA := TArrayEx.CloneArray<real>([10.1,22.3]);
 

@@ -14,7 +14,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('windows10 purple');
   Splashform := TSplashForm.Create(Application);
   SplashForm.Show;
   SplashForm.Refresh;
