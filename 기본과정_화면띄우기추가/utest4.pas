@@ -16,7 +16,6 @@ type
      Name:string;
      Age:byte;
      Address:string;
-     class var etc:string;        //+2007 추가된 문법
      function GetName:string;
      constructor create; virtual;
    end;
@@ -37,6 +36,7 @@ type
    TH = class(TEmp)        //class sealed(temp) 더 이상 계승안됨
      hrs:integer;
      rate:integer;
+     class var etc:string;
      function salary:integer; override;  final;
      constructor create; override;
    end;

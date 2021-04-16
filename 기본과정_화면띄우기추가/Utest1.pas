@@ -190,7 +190,7 @@ end;
 
 procedure TForm1.Button8Click(Sender: TObject);
 begin
-  th.etc := '기타';
+  th.etc  := '기타';
   if h = nil then
      h := th.create;
 
@@ -199,7 +199,7 @@ begin
   Edit3.Text := h.Address;
   Edit4.Text := h.Company;
   Edit5.Text := inttostr(h.salary);
-  Edit6.Text := h.etc;
+  Edit6.text := h.etc;
   freeAndNil(h);  //해제 ,널처리
 //  h.Free;   // 메모리해제 인스턴스 널 처리 안함
 end;

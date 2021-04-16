@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 361
-  ClientWidth = 571
+  ClientHeight = 366
+  ClientWidth = 592
   Color = clBtnFace
   DragKind = dkDock
   Font.Charset = DEFAULT_CHARSET
@@ -19,22 +19,26 @@
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 571
-    Height = 361
+    Width = 592
+    Height = 366
     ActivePage = TabSheet1
     Align = alClient
     MultiLine = True
     TabOrder = 0
+    Touch.GestureManager = GestureManager1
+    ExplicitWidth = 571
+    ExplicitHeight = 361
     object TabSheet1: TTabSheet
       Caption = #51312#54924
       object TabControl1: TTabControl
         Left = 0
         Top = 0
-        Width = 563
-        Height = 333
+        Width = 584
+        Height = 338
         Align = alClient
         TabOrder = 0
         Tabs.Strings = (
+          'ALL'
           'A'
           'B'
           'C'
@@ -62,18 +66,21 @@
           'Y'
           'Z')
         TabIndex = 0
+        OnChange = TabControl1Change
         object StringGrid1: TStringGrid
           Tag = 5
           Left = 4
           Top = 24
-          Width = 555
-          Height = 305
+          Width = 576
+          Height = 310
           Align = alClient
           DrawingStyle = gdsClassic
           FixedCols = 0
           RowCount = 8
           TabOrder = 0
           OnDrawCell = StringGrid1DrawCell
+          ExplicitWidth = 555
+          ExplicitHeight = 305
           ColWidths = (
             64
             64
@@ -92,10 +99,6 @@
     object TabSheet2: TTabSheet
       Caption = #54200#51665
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Image1: TImage
         Left = 32
         Top = 16
@@ -620,8 +623,6 @@
     object 차트: TTabSheet
       Caption = #52264#53944
       ImageIndex = 2
-      ExplicitWidth = 294
-      ExplicitHeight = 171
       inline TFrame11: TFrame1
         Left = 0
         Top = -44
@@ -4237,5 +4238,52 @@
       GridControl = StringGrid1
       Columns = <>
     end
+  end
+  object ActionList1: TActionList
+    Left = 492
+    Top = 248
+    object TabPreviousTab1: TPreviousTab
+      Category = 'Tab'
+      TabControl = PageControl1
+      Caption = '&Previous'
+      Enabled = False
+      Hint = 'Previous|Go back to the previous tab'
+    end
+    object TabNextTab1: TNextTab
+      Category = 'Tab'
+      TabControl = PageControl1
+      Caption = '&Next'
+      Enabled = False
+      Hint = 'Next|Go to the next tab'
+    end
+  end
+  object GestureManager1: TGestureManager
+    Left = 496
+    Top = 312
+    GestureData = <
+      item
+        Control = PageControl1
+        Collection = <
+          item
+            Action = TabPreviousTab1
+            GestureID = sgiLeft
+          end
+          item
+            Action = TabNextTab1
+            GestureID = sgiRight
+          end>
+      end
+      item
+        Control = Form1.Owner
+        Collection = <
+          item
+            Action = TabPreviousTab1
+            GestureID = sgiLeft
+          end
+          item
+            Action = TabNextTab1
+            GestureID = sgiRight
+          end>
+      end>
   end
 end

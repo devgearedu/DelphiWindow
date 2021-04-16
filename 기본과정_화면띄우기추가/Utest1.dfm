@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   ActiveControl = Edit1
   Caption = 'Form1'
-  ClientHeight = 478
-  ClientWidth = 899
+  ClientHeight = 493
+  ClientWidth = 967
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,7 @@ object Form1: TForm1
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  Touch.GestureManager = Form2.GestureManager1
   StyleElements = [seFont, seClient]
   StyleName = 'auric'
   OnActivate = FormActivate
@@ -29,11 +30,12 @@ object Form1: TForm1
     Height = 33
     Caption = 'Close'
     TabOrder = 0
+    StyleName = 'Carbon'
     OnClick = MyButtonClick
   end
   object Button1: TButton
-    Left = 152
-    Top = 24
+    Left = 135
+    Top = 23
     Width = 105
     Height = 33
     Caption = #49549#49457#48320#44221
@@ -41,7 +43,7 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 280
+    Left = 246
     Top = 22
     Width = 97
     Height = 35
@@ -50,7 +52,7 @@ object Form1: TForm1
     OnClick = MyButtonClick
   end
   object Button3: TButton
-    Left = 408
+    Left = 349
     Top = 22
     Width = 105
     Height = 35
@@ -68,7 +70,7 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 152
+    Left = 135
     Top = 80
     Width = 105
     Height = 33
@@ -77,7 +79,7 @@ object Form1: TForm1
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 288
+    Left = 246
     Top = 80
     Width = 89
     Height = 33
@@ -86,7 +88,7 @@ object Form1: TForm1
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 408
+    Left = 349
     Top = 80
     Width = 105
     Height = 33
@@ -104,9 +106,9 @@ object Form1: TForm1
     OnClick = Button8Click
   end
   object GroupBox1: TGroupBox
-    Left = 152
-    Top = 144
-    Width = 361
+    Left = 135
+    Top = 152
+    Width = 338
     Height = 298
     Caption = 'th '#51221#48372
     TabOrder = 9
@@ -228,11 +230,12 @@ object Form1: TForm1
     OnClick = Button14Click
   end
   object Panel1: TPanel
-    Left = 515
+    Left = 479
     Top = 0
-    Width = 384
-    Height = 478
+    Width = 488
+    Height = 493
     Align = alRight
+    Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvLowered
     Caption = 'Panel1'
     DockSite = True
@@ -241,7 +244,7 @@ object Form1: TForm1
   end
   object Button15: TButton
     Left = 32
-    Top = 454
+    Top = 456
     Width = 97
     Height = 25
     Caption = 'FLOAT'

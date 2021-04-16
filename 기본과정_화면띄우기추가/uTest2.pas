@@ -8,7 +8,7 @@ uses
   Vcl.Bind.Grid, System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors,
   Vcl.StdCtrls, Vcl.ExtCtrls, Data.Bind.Components, Data.Bind.Grid,
   Data.Bind.DBScope, Data.DB, Datasnap.DBClient, Vcl.Grids, Vcl.ComCtrls,
-  UmyFrame;
+  UmyFrame, Vcl.Touch.GestureMgr, Vcl.ExtActns, System.Actions, Vcl.ActnList;
 
 type
   TForm2 = class(TForm)
@@ -25,10 +25,15 @@ type
     Image1: TImage;
     Edit1: TEdit;
     TFrame11: TFrame1;
+    ActionList1: TActionList;
+    TabPreviousTab1: TPreviousTab;
+    TabNextTab1: TNextTab;
+    GestureManager1: TGestureManager;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure StringGrid1DrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
+    procedure TabControl1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,6 +103,19 @@ begin
       TextRect(Rect, Rect.Left+pos, Rect.Top+3, s);
     end;
   end;
+
+end;
+
+procedure TForm2.TabControl1Change(Sender: TObject);
+begin
+   if tabcontrol1.Tabindex = 0 then
+      ClientDataset1.filtered := false
+   else
+   begin
+      ClientDataset1.filtered := True;
+      ClientDataset1.filter :=
+      'name >' + '''' + Tabcontrol1.tabs[Tabcontrol1.tabindex] + '''';
+   end;
 
 end;
 
