@@ -30,20 +30,20 @@ implementation
 
 procedure TForm188.Button1Click(Sender: TObject);
 begin
-// try
+try
     try
       caption := ListBox1.Items[0];
     except
        on e:estringListerror do
        begin
           showmessage('error1 process');
-       //   raise;
-          abort;  // raise eabort.create('xxx')
+          raise;
+       //   abort;  // raise eabort.create('xxx')
        end;
     end;
-//  except
-//    showmessage('error2 process');
-//  end;
+  except
+    showmessage('error2 process');
+  end;
    showmessage('ing');
 end;
 

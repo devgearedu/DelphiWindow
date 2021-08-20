@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0B032D5C-114F-4A31-AE33-C5101BF4530F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="sample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\기본과정_화면띄우기추가\Test.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="sample">
+        <MSBuild Projects="sample.dproj"/>
+    </Target>
+    <Target Name="sample:Clean">
+        <MSBuild Projects="sample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sample:Make">
+        <MSBuild Projects="sample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Test">
+        <MSBuild Projects="..\기본과정_화면띄우기추가\Test.dproj"/>
+    </Target>
+    <Target Name="Test:Clean">
+        <MSBuild Projects="..\기본과정_화면띄우기추가\Test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Test:Make">
+        <MSBuild Projects="..\기본과정_화면띄우기추가\Test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="sample;Test"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="sample:Clean;Test:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="sample:Make;Test:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
